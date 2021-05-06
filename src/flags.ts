@@ -13,9 +13,26 @@
  */
 
 /* Global flags that control the behavior of App Auth JS. */
+export class Flags {
+  /* Logging turned on ? */
+  private static readonly DEFAULT_IS_LOG = true;
+  private static _IS_LOG: boolean;
+  public static get IS_LOG(): boolean {
+    return this._IS_LOG ?? Flags.DEFAULT_IS_LOG;
+  }
 
-/* Logging turned on ? */
-export const IS_LOG = true;
+  public static set IS_LOG(v: boolean) {
+    this._IS_LOG = v;
+  }
 
-/* Profiling turned on ? */
-export const IS_PROFILE = false;
+  /* Profiling turned on ? */
+  private static readonly DEFAULT_IS_PROFILE = false;
+  private static _IS_PROFILE: boolean;
+  public static get IS_PROFILE(): boolean {
+    return this._IS_PROFILE ?? Flags.DEFAULT_IS_PROFILE;
+  }
+
+  public static set IS_PROFILE(v: boolean) {
+    this._IS_PROFILE = v;
+  }
+}
